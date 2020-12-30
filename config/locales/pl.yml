@@ -1,0 +1,6 @@
+pl:
+  time:
+    formats:
+      long: "%d-%m-%Y %H:%M:%S"
+  active_admin:
+    powered_by: "©Damian Dobrowolski 2020"
