@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable
+
+  ROLES = %i[admin data_admin analyst reader]
+
+  def self.get_available_roles
+      ROLES
+  end
 end

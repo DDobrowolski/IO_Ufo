@@ -1,6 +1,29 @@
 pl:
+  admin: "Administrator Systemu"
+  data_admin: "Administrator Danych"
+  analyst: "Analityk"
+  reader: "Czytelnik"
   time:
     formats:
       long: "%d-%m-%Y %H:%M:%S"
+  activerecord:
+    models:
+      observer: 
+        one: "Obserwator"
+        other: "Obserwatorzy"
+      user:
+        one: "Użytkownik"
+        other: "Użytkownicy"
+    attributes:
+      observer:
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        nick: "Pseudonim"
+        address: "Adres"
+        contact: "Dane kontaktowe"
+        photo: "Zdjęcie"
+        description: "Opis"
+        created_at: "Data utworzenia"
+        updated_at: "Zaaktualizowano"
   active_admin:
     powered_by: "©Damian Dobrowolski 2020"
