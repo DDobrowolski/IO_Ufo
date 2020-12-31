@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable
 
+  has_many :analysises
+
   ROLES = %i[admin data_admin analyst reader]
 
   def self.get_available_roles

@@ -14,6 +14,12 @@ pl:
       user:
         one: "Użytkownik"
         other: "Użytkownicy"
+      observation:
+        one: "Obserwacja"
+        other: "Obserwacje"
+      analysis:
+        one: "Analiza"
+        other: "Analizy"
     attributes:
       observer:
         first_name: "Imię"
@@ -25,5 +31,18 @@ pl:
         description: "Opis"
         created_at: "Data utworzenia"
         updated_at: "Zaaktualizowano"
+      observation:
+        occured_at: "Data wystąpienia"
+        gps: "Współrzędne GPS"
+        description: "Opis"
+        directory_name: "Nazwa katalogu"
+        permit_role: "Poziom uprawnień"
+      analysis:
+        user: "Analityk"
+        observation: "Obserwacja"
+        description: "Opis"
+        conclusions: "Wnioski"
+        classification: "Klasyfikacja"
+        interpretation: "Interpretacja"
   active_admin:
     powered_by: "©Damian Dobrowolski 2020"

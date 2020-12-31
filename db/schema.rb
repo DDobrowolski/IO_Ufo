@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_212102) do
+ActiveRecord::Schema.define(version: 2020_12_31_012615) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "namespace"
@@ -24,6 +24,29 @@ ActiveRecord::Schema.define(version: 2020_12_30_212102) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "analyses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.text "description"
+    t.text "conclusions"
+    t.string "classification"
+    t.string "interpretation"
+    t.bigint "user_id", null: false
+    t.bigint "observation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["observation_id"], name: "index_analyses_on_observation_id"
+    t.index ["user_id"], name: "index_analyses_on_user_id"
+  end
+
+  create_table "observations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.date "occured_at"
+    t.string "gps"
+    t.text "description"
+    t.string "directory_name"
+    t.string "permit_role"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "observers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -51,4 +74,6 @@ ActiveRecord::Schema.define(version: 2020_12_30_212102) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "analyses", "observations"
+  add_foreign_key "analyses", "users"
 end
