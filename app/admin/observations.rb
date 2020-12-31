@@ -5,7 +5,7 @@ ActiveAdmin.register Observation do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :occured_at, :gps, :description, :directory_name, :permit_role
+  permit_params :occurred_at, :gps, :description, :directory_name, :permit_role
   #
   # or
   #

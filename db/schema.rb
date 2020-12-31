@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_31_012615) do
+ActiveRecord::Schema.define(version: 2020_12_31_014631) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "namespace"
@@ -40,13 +40,13 @@ ActiveRecord::Schema.define(version: 2020_12_31_012615) do
   end
 
   create_table "observations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.date "occured_at"
     t.string "gps"
     t.text "description"
     t.string "directory_name"
     t.string "permit_role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.timestamp "occurred_at"
   end
 
   create_table "observers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|

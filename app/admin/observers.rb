@@ -5,7 +5,7 @@ ActiveAdmin.register Observer do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :last_name, :first_name, :nick, :address, :contact, :photo, :description
+  permit_params :last_name, :first_name, :nick, :address, :contact, :photo, :description
   #
   # or
   #

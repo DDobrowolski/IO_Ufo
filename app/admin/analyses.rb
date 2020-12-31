@@ -5,7 +5,7 @@ ActiveAdmin.register Analysis do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :description, :conclusions, :classification, :interpretation, :user_id, :observation_id
+  permit_params :description, :conclusions, :classification, :interpretation, :user_id, :observation_id
   #
   # or
   #
@@ -14,5 +14,17 @@ ActiveAdmin.register Analysis do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
+  form do |f|
+    f.inputs do
+      f.input :user_id, as: :select, collection: User.where(role: "analyst").map {|u| [u.email, u.id]}
+      f.input :observation_id, as: :select, collection: Observation.all.map {|o| [o.occurred_at, o.id]}
+      f.input :description
+      f.input :conclusions
+      f.input :classification
+      f.input :interpretation
+    end
+    f.actions
+  end
   
 end

@@ -6,6 +6,9 @@ pl:
   time:
     formats:
       long: "%d-%m-%Y %H:%M:%S"
+  date:
+    formats:
+      long: "%d-%m-%Y"
   activerecord:
     models:
       observer: 
@@ -21,6 +24,8 @@ pl:
         one: "Analiza"
         other: "Analizy"
     attributes:
+      user:
+        role: "Rola"
       observer:
         first_name: "Imię"
         last_name: "Nazwisko"
@@ -37,6 +42,8 @@ pl:
         description: "Opis"
         directory_name: "Nazwa katalogu"
         permit_role: "Poziom uprawnień"
+        created_at: "Data utworzenia"
+        updated_at: "Zaaktualizowano"
       analysis:
         user: "Analityk"
         observation: "Obserwacja"
@@ -44,5 +51,7 @@ pl:
         conclusions: "Wnioski"
         classification: "Klasyfikacja"
         interpretation: "Interpretacja"
+        created_at: "Data utworzenia"
+        updated_at: "Zaaktualizowano"
   active_admin:
     powered_by: "©Damian Dobrowolski 2020"
