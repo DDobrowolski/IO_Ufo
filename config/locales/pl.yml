@@ -46,7 +46,7 @@ pl:
         created_at: "Data utworzenia"
         updated_at: "Zaaktualizowano"
       observation:
-        occured_at: "Data wystąpienia"
+        occurred_at: "Data wystąpienia"
         gps: "Współrzędne GPS"
         description: "Opis"
         directory_name: "Nazwa katalogu"
@@ -54,12 +54,12 @@ pl:
         created_at: "Data utworzenia"
         updated_at: "Zaaktualizowano"
       analysis:
-        user: "Analityk"
-        observation: "Obserwacja"
+        user_id: "Analityk"
+        observation_id: "Obserwacja"
         description: "Opis"
         conclusions: "Wnioski"
-        classification: "Klasyfikacja"
-        interpretation: "Interpretacja"
+        classification_id: "Klasyfikacja"
+        interpretation_id: "Interpretacja"
         created_at: "Data utworzenia"
         updated_at: "Zaaktualizowano"
       classification:
@@ -73,8 +73,8 @@ pl:
       public_activity/activity:
         trackable_type: "Typ encji"
         trackable: "Encja"
-        owner_type: "Typ właściciela"
-        owner: "Właściciel"
+        owner_type: "Typ wykonwacy"
+        owner: "Wykonawca"
         key: "Klucz"
         parameters: "Parametry"
         recipient_type: "Typ odbiorcy"

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable, :encryptable, :registerable
   include PublicActivity::Model
-  tracked owner: Proc.new{ |controller, model| controller.current_user }
+  tracked owner: Proc.new{ |controller, model| controller ? controller.current_user : nil }
   has_many :analysises
 
   ROLES = %i[admin data_admin analyst reader]
