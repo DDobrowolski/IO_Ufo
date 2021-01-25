@@ -7,8 +7,21 @@ class Ability
     # Define abilities for the passed in user here. For example:
     
       user ||= User.new # guest user (not logged in)
+
+      can :manage, User, id: user.id
+      can :read, ActiveAdmin::Page, name: "Dashboard", namespace_name: "admin"
+
       if user.role === 'admin'
         can :manage, :all
+      elsif user.role === 'reader'
+        can :read, [Observation, Observer, Analysis]
+      elsif user.role === 'analyst'
+        can :read, [Observation, Observer, Analysis]
+        can :create, Analysis
+      elsif user.role === 'data_admin'
+        can :read, [Observation, Observer, Analysis]
+        can :create, Analysis
+        can :edit, Observation
       else
         can :read, :all
       end

@@ -24,7 +24,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'cancancan'
-
+gem "devise-encryptable"
+gem 'public_activity'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

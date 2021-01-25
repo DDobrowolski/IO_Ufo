@@ -23,6 +23,15 @@ pl:
       analysis:
         one: "Analiza"
         other: "Analizy"
+      classification:
+        one: "Klasyfikacja"
+        other: "Klasyfikacje"
+      interpretation:
+        one: "Interpretacja"
+        other: "Interpretacje"
+      public_activity/activity:
+        one: "Aktywność"
+        other: "Aktywności"
     attributes:
       user:
         role: "Rola"
@@ -51,6 +60,25 @@ pl:
         conclusions: "Wnioski"
         classification: "Klasyfikacja"
         interpretation: "Interpretacja"
+        created_at: "Data utworzenia"
+        updated_at: "Zaaktualizowano"
+      classification:
+        name: "Nazwa"
+        created_at: "Data utworzenia"
+        updated_at: "Zaaktualizowano"
+      interpretation:
+        name: "Nazwa"
+        created_at: "Data utworzenia"
+        updated_at: "Zaaktualizowano"
+      public_activity/activity:
+        trackable_type: "Typ encji"
+        trackable: "Encja"
+        owner_type: "Typ właściciela"
+        owner: "Właściciel"
+        key: "Klucz"
+        parameters: "Parametry"
+        recipient_type: "Typ odbiorcy"
+        recipient: "Odbiorca"
         created_at: "Data utworzenia"
         updated_at: "Zaaktualizowano"
   active_admin:

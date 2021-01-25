@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     get 'forgot_password', to: 'users/passwords#new'
     get 'reset_password', to: 'users/passwords#edit'
   end
-  root to: 'application#home'
+  root to: 'admin/dashboard#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
