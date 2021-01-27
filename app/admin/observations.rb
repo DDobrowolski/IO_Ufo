@@ -5,12 +5,12 @@ ActiveAdmin.register Observation do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :occurred_at, :gps, :description, :directory_name, :permit_role, observer_ids: []
+  permit_params :occurred_at, :gps, :description, :directory_name, :permit_level, observer_ids: []
   #
   # or
   #
   # permit_params do
-  permitted = [:occurred_at, :gps, :description, :directory_name, :permit_role, :observer_ids]
+  permitted = [:occurred_at, :gps, :description, :directory_name, :permit_level, :observer_ids]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end

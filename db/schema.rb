@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_222556) do
+ActiveRecord::Schema.define(version: 2021_01_27_011839) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "namespace"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_222556) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "classification_id"
     t.bigint "interpretation_id"
+    t.integer "permit_level"
     t.index ["classification_id"], name: "index_analyses_on_classification_id"
     t.index ["interpretation_id"], name: "index_analyses_on_interpretation_id"
     t.index ["observation_id"], name: "index_analyses_on_observation_id"
@@ -81,10 +82,10 @@ ActiveRecord::Schema.define(version: 2021_01_25_222556) do
     t.string "gps"
     t.text "description"
     t.string "directory_name"
-    t.string "permit_role"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.timestamp "occurred_at"
+    t.integer "permit_level"
   end
 
   create_table "observations_observers", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -114,12 +115,13 @@ ActiveRecord::Schema.define(version: 2021_01_25_222556) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "role"
     t.string "password_salt"
+    t.integer "permit_level"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "analyses", "classifications", column: "classification_id"
-  add_foreign_key "analyses", "interpretations", column: "interpretation_id"
+  add_foreign_key "analyses", "classifications"
+  add_foreign_key "analyses", "interpretations"
   add_foreign_key "analyses", "observations"
   add_foreign_key "analyses", "users"
 end

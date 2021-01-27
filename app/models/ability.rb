@@ -8,23 +8,30 @@ class Ability
     
       user ||= User.new # guest user (not logged in)
 
-      can :manage, User, id: user.id
+      can :read, User, id: user.id
       can :read, ActiveAdmin::Page, name: "Dashboard", namespace_name: "admin"
 
-      if user.role === 'admin'
-        can :manage, :all
-      elsif user.role === 'reader'
-        can :read, [Observation, Observer, Analysis]
-      elsif user.role === 'analyst'
-        can :read, [Observation, Observer, Analysis]
-        can :create, Analysis
-      elsif user.role === 'data_admin'
-        can :read, [Observation, Observer, Analysis]
-        can :create, Analysis
-        can :edit, Observation
-      else
-        can :read, :all
+    if user.role === 'admin'
+      can :manage, :all
+    elsif user.role === 'reader'
+      can :read, Analysis,  ["permit_level <= ?", user.permit_level] do |a|
+        a.permit_level === user.permit_level
       end
+      can :read, Observation, ["permit_level <= ?", user.permit_level] do |o|
+        o.permit_level <= user.permit_level
+      end
+    elsif user.role === 'analyst'
+      can :read, [Observer, Analysis]
+      can :read, Observation, Observation.all do |o|
+        o.permit_level <= user.permit_level
+      end
+      can :create, Analysis
+    elsif user.role === 'data_admin'
+      can :read, [Observation, Observer, Analysis]
+      can :create, Analysis
+      can :edit, Observation
+    else
+    end
     
     # The first argument to `can` is the action you are giving the user
     # permission to do.

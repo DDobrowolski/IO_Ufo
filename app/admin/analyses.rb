@@ -5,7 +5,7 @@ ActiveAdmin.register Analysis do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :description, :conclusions, :classification_id, :interpretation_id, :user_id, :observation_id
+  permit_params :description, :conclusions, :classification_id, :interpretation_id, :user_id, :observation_id, :permit_level
   #
   # or
   #
@@ -23,6 +23,7 @@ ActiveAdmin.register Analysis do
       f.input :conclusions
       f.input :classification_id, as: :select, collection: Classification.all.map {|u| [u.name, u.id]}
       f.input :interpretation_id, as: :select, collection: Interpretation.all.map {|u| [u.name, u.id]}
+      f.input :permit_level
     end
     f.actions
   end
