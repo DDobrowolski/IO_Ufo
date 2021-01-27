@@ -38,6 +38,10 @@ pl:
       user:
         role: "Rola"
         permit_level: "Poziom uprawnień"
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        address: "Adres"
+        phone_number: "Numer telefonu"
       observer:
         first_name: "Imię"
         last_name: "Nazwisko"
