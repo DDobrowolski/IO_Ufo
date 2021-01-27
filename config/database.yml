@@ -49,6 +49,5 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: projekt_ufo_production
-  username: projekt_ufo
-  password: <%= ENV['PROJEKT_UFO_DATABASE_PASSWORD'] %>
