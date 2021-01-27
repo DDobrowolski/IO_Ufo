@@ -49,5 +49,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
   url: <%= ENV['DATABASE_URL'] %>
   database: projekt_ufo_production
